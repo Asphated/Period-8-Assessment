@@ -1591,3 +1591,9 @@ const data = [
 ];
 
 //While chaining array methods,filter the card set by sets with at least 200 cards and print those set names and card count totals after sorting by total card count
+data
+  .filter((item) => item.cardCount.total >= 200)
+  .sort((a, b) => a.cardCount.total - b.cardCount.total)
+  .forEach((item) => {
+    console.log(item.name, item.cardCount.total);
+  });
